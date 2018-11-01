@@ -2,8 +2,17 @@
 用vs编译exOsip，并将几个项目合并成一个库输出
 
 解决方案文件: build/build.sln
-
 vs版本是2012，可以升级
+编译后生成exOsip.lib一个文件，使用时另外需要附加:Dnsapi.lib、Iphlpapi.lib、Ws2_32.lib、delayimp.lib、Qwave.lib
+使用时添加引用目录位本文件所在的目录,按如下示例引用头文件
+#include <osipparser2/osip_message.h>
+#include <osipparser2/osip_parser.h>
+#include <osipparser2/osip_port.h>
+#include <eXosip2/eXosip.h>
+#include <eXosip2/eX_setup.h>
+#include <eXosip2/eX_register.h>
+#include <eXosip2/eX_options.h>
+#include <eXosip2/eX_message.h>
 ---------------------------------------------------
 Project    : eXosip2 - the eXtended osip Library.
 Email      : amoizard@antisip.com
